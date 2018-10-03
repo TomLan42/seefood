@@ -1,11 +1,10 @@
 package com.tomlan42.seefood
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.SeekBar
+import android.view.View
 import android.widget.TextView
-import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -13,13 +12,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton = findViewById<Button>(R.id.rollButton)
-        val resultsTextView = findViewById<TextView>(R.id.resultsTextView)
-        val seekBar = findViewById<SeekBar>(R.id.seekBar)
 
-        rollButton.setOnClickListener{
-            //val rand = Random().nextInt(seekBar.progress)
-            resultsTextView.text = seekBar.progress.toString()
-        }
     }
+
+
+    fun toCamera(view: View){
+        val intent = Intent(this, Camera::class.java)
+        startActivity(intent)
+
+    }
+
+
 }
